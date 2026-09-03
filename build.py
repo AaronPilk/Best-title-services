@@ -139,7 +139,7 @@ def footer():
     <div class="footer__grid">
       <div>
         <div class="footer__logo"><img src="assets/img/logo-light.png" alt="{name}" width="420" height="200" /></div>
-        <p>Providing residential and commercial title insurance across {region}. Trusted, independent, and available when you need us.</p>
+        <p>Independent title agency in Hickory, North Carolina. Searches, commitments and closings across all 146 counties in the Carolinas.</p>
       </div>
       <div>
         <h4>Explore</h4>
@@ -159,7 +159,7 @@ def footer():
     </div>
     <div class="footer__bottom">
       <span>&copy; <span id="year">2026</span> {name}. All rights reserved.</span>
-      <span>Residential &amp; Commercial Title Insurance &middot; {abbr}</span>
+      <span>Title insurance &amp; closing services &middot; Hickory, NC</span>
     </div>
   </div>
 </footer>
@@ -167,23 +167,23 @@ def footer():
 <script src="assets/js/main.js"></script>
 </body>
 </html>
-""".format(name=S["name"], region=S["region"], links=links, rate=S["rate_calc"],
+""".format(name=S["name"], links=links, rate=S["rate_calc"],
            tel=TEL, ph=I["phone"], phone_disp=S["phone_disp"], mail=I["mail"],
-           email=S["email"], pin=I["pin"], locale=S["locale_line"], abbr=S["region_abbr"])
+           email=S["email"], pin=I["pin"], locale=S["locale_line"])
 
 def feature(ico, title, sub, d=""):
     return ('<div class="feature{d}" data-reveal><div class="feature__ico">{i}</div>'
             '<div><b>{t}</b><span>{s}</span></div></div>').format(
             d=(" "+d if d else ""), i=I[ico], t=title, s=sub)
 
-WHY = [("shield","Experience",S["years"]+" years in title"),
-       ("check","Trustworthy","Independent &amp; reliable"),
-       ("bolt","Fast &amp; Accurate","Precise commitments"),
-       ("clock","Responsive","Accessible when you need us"),
-       ("clock","Nights &amp; Weekends","Available 7 days"),
-       ("globe","NC &amp; SC Counties","Full state coverage"),
-       ("search","Prior Policies","Extensive search network"),
-       ("layers","Complex Issues","Resolved with confidence")]
+WHY = [("shield","Experience","Two decades of it"),
+       ("check","Independent","No parent company"),
+       ("bolt","Quick turnaround","Commitments that hold up"),
+       ("clock","Reachable","You get a human"),
+       ("clock","Nights &amp; weekends","Closings don&rsquo;t wait"),
+       ("globe","Both Carolinas","100 NC &amp; 46 SC counties"),
+       ("search","Prior policies","Deep search network"),
+       ("layers","Messy files","Untangled, not punted")]
 
 def why_grid():
     return "\n      ".join(feature(k,t,s,["","d1","d2","d3"][i%4]) for i,(k,t,s) in enumerate(WHY))
@@ -191,28 +191,28 @@ def why_grid():
 # ================================================================ HOME
 def page_index():
     return (
-    head("{n} — Residential &amp; Commercial Title Insurance in Hickory, NC".format(n=S["name"]),
-         "{n} is a trusted, independent title agency providing residential and commercial title insurance across North and South Carolina. Based in Hickory, NC. Fast, accurate, and available nights and weekends.".format(n=S["name"]),
+    head("{n} — Title Insurance &amp; Closings in Hickory, NC".format(n=S["name"]),
+         "Independent title agency in Hickory, North Carolina. We search, clear and insure title for buyers, sellers, lenders and investors across all 100 NC counties and all 46 in South Carolina. Nights and weekends included.",
          "index.html")
     + nav("index.html")
     + """
 <!-- HERO -->
 <section class="hero hero--home" id="top">
   <div class="hero__bg">
-    <img src="assets/img/hero-lake.jpg" alt="Lake Hickory at sunset with the Blue Ridge foothills beyond" fetchpriority="high" width="2400" height="1600" />
+    <img src="assets/img/hero-lake.jpg" alt="A lake in the North Carolina foothills at sunset with the Blue Ridge beyond" fetchpriority="high" width="2400" height="1600" />
   </div>
   <div class="wrap">
     <div class="hero__content" data-reveal>
       <span class="hero__badge"><span class="dot"></span>Independent title agency &middot; Hickory, NC</span>
-      <h1>Residential &amp; commercial title insurance, <span class="text-grad">done right.</span></h1>
-      <p class="hero__sub">{name} is a trusted, independent title agency specializing in title insurance across {region} &mdash; built on exceptional customer service, fast turnaround, and deep industry expertise.</p>
+      <h1>Title work that keeps your closing <span class="text-grad">on schedule.</span></h1>
+      <p class="hero__sub">{name} is an independent title agency in Hickory, North Carolina. We search, clear, and insure title for buyers, sellers, lenders, and investors across both Carolinas &mdash; and we answer the phone when you need us.</p>
       <div class="hero__actions">
         <a href="{mailto}" class="btn btn--gold">Order Title {arrow}</a>
         <a href="{rate}" target="_blank" rel="noopener" class="btn btn--ghost">Rate Calculator</a>
       </div>
       <div class="hero-badges">
-        <span>{shield} Backed by WFG Underwriters</span>
-        <span>{clock} Available Nights &amp; Weekends</span>
+        <span>{shield} WFG National Title underwriting</span>
+        <span>{clock} We work nights and weekends</span>
       </div>
     </div>
   </div>
@@ -221,16 +221,16 @@ def page_index():
     <div class="fc-wrap fc-a" data-parallax="16">
       <div class="float-card anim-float">
         <div class="fc-ico">{bolt}</div>
-        <div class="fc-title">Title commitment</div>
-        <div class="fc-sub">Fast, accurate, on your timeline</div>
+        <div class="fc-title">Commitment issued</div>
+        <div class="fc-sub">Searched, cleared, on time</div>
       </div>
     </div>
     <div class="fc-wrap fc-b" data-parallax="26">
       <div class="float-card float-card--row anim-float delay">
         <div class="pulse"><i></i></div>
         <div>
-          <div class="fc-title">We answer after hours</div>
-          <div class="fc-sub">Early mornings &middot; Late evenings</div>
+          <div class="fc-title">Someone picks up</div>
+          <div class="fc-sub">Early, late, weekends</div>
         </div>
       </div>
     </div>
@@ -238,23 +238,22 @@ def page_index():
       <div class="float-card float-card--row anim-float delay2">
         <div class="fc-ico">{globe}</div>
         <div>
-          <div class="fc-title">Every county, NC &amp; SC</div>
-          <div class="fc-sub">Statewide search network</div>
+          <div class="fc-title">146 counties</div>
+          <div class="fc-sub">All of NC and SC</div>
         </div>
       </div>
     </div>
   </div>
-
 </section>
 
 <!-- TRUST STATS -->
 <section class="section section--tight stats-float">
   <div class="wrap">
     <div class="stats">
-      <div class="stat-card" data-reveal><b class="text-grad-b">{years}</b><span>Years in title &amp; real estate</span></div>
-      <div class="stat-card d1" data-reveal><b class="text-grad-b">100%</b><span>NC &amp; SC county coverage</span></div>
-      <div class="stat-card d2" data-reveal><b class="text-grad-b">7-Day</b><span>Nights &amp; weekend service</span></div>
-      <div class="stat-card d3" data-reveal><b class="text-grad-b">WFG</b><span>Industry-leading underwriter</span></div>
+      <div class="stat-card" data-reveal><b class="text-grad-b">{years}</b><span>Years working Carolina title</span></div>
+      <div class="stat-card d1" data-reveal><b class="text-grad-b">146</b><span>Counties across NC &amp; SC</span></div>
+      <div class="stat-card d2" data-reveal><b class="text-grad-b">7-Day</b><span>We&rsquo;re reachable, including weekends</span></div>
+      <div class="stat-card d3" data-reveal><b class="text-grad-b">WFG</b><span>National underwriting behind us</span></div>
     </div>
   </div>
 </section>
@@ -264,8 +263,8 @@ def page_index():
   <div class="wrap">
     <div class="section-head" data-reveal>
       <span class="eyebrow">Who we are</span>
-      <h2>A trusted, independent title agency for the Carolinas</h2>
-      <p>We exist to exceed expectations and deliver unparalleled service to our valued clients &mdash; combining precision, speed, and genuine care on every file.</p>
+      <h2>Independent &mdash; and that&rsquo;s the point</h2>
+      <p>No parent company setting our turnaround times. No call center between you and the person actually running your search. We answer to the file in front of us, and to whoever is waiting on it.</p>
     </div>
   </div>
 </section>
@@ -275,28 +274,28 @@ def page_index():
   <div class="wrap">
     <div class="section-head" data-reveal>
       <span class="eyebrow">What we do</span>
-      <h2>A tailored range of title services</h2>
-      <p>At {name}, we offer a tailored range of services backed by more than {yrs_words} of experience &mdash; from residential and land title insurance to closing coordination and complex commercial transactions.</p>
+      <h2>Three ways we get you to the table</h2>
+      <p>Two decades of Carolina title work behind every commitment we issue &mdash; whether it&rsquo;s a starter home in Catawba County, a lake lot changing hands, or a commercial deal with a stack of easements attached.</p>
     </div>
     <div class="grid grid-3">
       <a href="services.html" class="card" data-reveal>
         <div class="card__ico">{home}</div>
         <h3>Residential &amp; Land Title</h3>
-        <p>Exceptional customer service and unparalleled speed with utmost precision &mdash; from a locally rooted team that knows your area.</p>
+        <p>Fast, accurate commitments from people who know the county registers of deeds by name &mdash; and know which old parcels tend to hide problems.</p>
       </a>
       <a href="services.html" class="card d1" data-reveal>
         <div class="card__ico">{doc}</div>
         <h3>Closing Services</h3>
-        <p>We connect you with experienced closing attorneys and notaries &mdash; including remote closings for flexibility and convenience.</p>
+        <p>We&rsquo;ll match you with a closing attorney or notary who fits the deal &mdash; in person or remote, wherever you are in the Carolinas.</p>
       </a>
       <a href="services.html" class="card d2" data-reveal>
         <div class="card__ico">{bldg}</div>
         <h3>Commercial Title</h3>
-        <p>Higher stakes and intricate negotiations demand full protection. We safeguard your investment commensurate with its value.</p>
+        <p>Bigger numbers, longer negotiations, more moving parts. We insure commercial deals to the level the investment actually warrants.</p>
       </a>
     </div>
     <div style="text-align:center;margin-top:44px;" data-reveal>
-      <a href="services.html" class="btn btn--primary">Explore all services {arrow}</a>
+      <a href="services.html" class="btn btn--primary">See what we handle {arrow}</a>
     </div>
   </div>
 </section>
@@ -308,8 +307,8 @@ def page_index():
     <div style="max-width:640px;" data-reveal>
       <span class="eyebrow">Rooted in the foothills</span>
       <h2>We know this ground &mdash; parcel by parcel.</h2>
-      <p style="margin-top:18px;">From the lake to the ridgelines, land in the Carolina foothills carries its own history: old family deeds, shifting boundaries, easements written a century ago. We read that history for a living.</p>
-      <p style="margin-top:14px;">Being local means we understand your particular location and circumstances &mdash; and it means we pick up the phone when something needs sorting out today, not next week.</p>
+      <p style="margin-top:18px;">From the lake to the ridgelines, land in the Carolina foothills carries its own history: old family deeds, boundaries that moved, easements written a century ago and never cleaned up. Reading that history is the job.</p>
+      <p style="margin-top:14px;">Being local means we&rsquo;ve pulled chains of title on these parcels before. It also means we pick up the phone when something needs sorting out today, not next week.</p>
       <div style="margin-top:30px;">
         <a href="services.html" class="btn btn--gold">See how we work {arrow}</a>
       </div>
@@ -322,8 +321,8 @@ def page_index():
   <div class="wrap">
     <div class="section-head" data-reveal>
       <span class="eyebrow">Why {short}</span>
-      <h2>Built for speed, accuracy &amp; trust</h2>
-      <p>Every reason clients across the Carolinas keep coming back to us.</p>
+      <h2>Why agents and lenders keep calling us</h2>
+      <p>Eight reasons files tend to move faster when they come through our office.</p>
     </div>
     <div class="grid grid-4">
       {why}
@@ -338,25 +337,25 @@ def page_index():
   <div class="wrap">
     <div class="partner" data-reveal>
       <span class="eyebrow eyebrow--light">Our underwriting partner</span>
-      <h2>Proudly partnered with WFG&rsquo;s<br>industry-leading underwriters</h2>
-      <p style="max-width:580px;margin:18px auto 0;">Backed by WFG National Title Insurance Company, we pair local expertise with the strength of a national underwriter.</p>
+      <h2>A national underwriter standing<br>behind local work</h2>
+      <p style="max-width:580px;margin:18px auto 0;">We write on WFG National Title Insurance Company paper. You get a neighbor who knows the county, plus the financial backing of one of the country&rsquo;s largest title underwriters.</p>
       <div class="partner__logo"><img src="assets/img/wfg.png" alt="WFG National Title Insurance Company" loading="lazy" /></div>
     </div>
   </div>
 </section>
-""".format(name=S["name"], short=S["short"], region=S["region"], years=S["years"],
-           yrs_words="two decades", mailto=MAILTO, rate=S["rate_calc"],
+""".format(name=S["name"], short=S["short"], years=S["years"],
+           mailto=MAILTO, rate=S["rate_calc"],
            arrow=I["arrow"], shield=I["shield"], clock=I["clock"], bolt=I["bolt"],
            globe=I["globe"], home=I["home"], doc=I["doc"], bldg=I["bldg"], why=why_grid())
-    + cta("Available nights &amp; weekends", "Ready to order your title?",
-          "Send us your request and our team will get started right away. Questions? We&rsquo;re accessible early mornings and late evenings &mdash; whenever you need us.")
+    + cta("Nights and weekends included", "Send us the file",
+          "Email the details and we&rsquo;ll get the search started today. Questions first? Call &mdash; early, late, or on a Saturday. Someone will pick up.")
     + footer())
 
 # ================================================================ SERVICES
 def page_services():
     return (
-    head("Services — {n} | Residential, Closing &amp; Commercial Title".format(n=S["name"]),
-         "Residential and land title insurance, closing services, and commercial title insurance across North and South Carolina — backed by more than two decades of experience.",
+    head("Services — {n} | Residential, Land, Closing &amp; Commercial Title".format(n=S["name"]),
+         "Residential and land title searches, closing coordination, and commercial title insurance across all 100 North Carolina counties and all 46 in South Carolina. Based in Hickory, NC.",
          "services.html")
     + nav("services.html")
     + """
@@ -364,8 +363,8 @@ def page_services():
   <div class="wrap">
     <div class="section-head" data-reveal>
       <span class="eyebrow">Our services</span>
-      <h1>Title services, tailored to <span class="text-grad">every transaction</span></h1>
-      <p>From residential and land title to closing coordination and complex commercial deals &mdash; delivered with speed, precision, and genuine care across the Carolinas.</p>
+      <h1>What we handle, and <span class="text-grad">how we handle it</span></h1>
+      <p>Residential and land title, closing coordination, and commercial work &mdash; searched carefully, cleared quickly, insured properly. All 100 North Carolina counties and all 46 in South Carolina.</p>
     </div>
   </div>
 </section>
@@ -379,11 +378,11 @@ def page_services():
         <span class="badge-pill">Residential &amp; Land</span>
       </div>
       <div class="split__body d1" data-reveal>
-        <span class="eyebrow">Residential &amp; Land Title Insurance</span>
-        <h2>Local expertise, unmatched precision</h2>
-        <p>{name} is committed to delivering exceptional customer service and unparalleled speed with utmost precision.</p>
-        <p>As a locally rooted North Carolina business based in {city}, we take pride in our deep understanding of your unique location and circumstances. With our team of in-house underwriters, we&rsquo;re accessible to address inquiries and tackle any problems that emerge during early mornings or late evenings.</p>
-        <p>Your requests are our highest priority, and we remain steadfast in our commitment to meeting your time-sensitive needs, regardless of their scale.</p>
+        <span class="eyebrow">Residential &amp; Land Title</span>
+        <h2>We know which parcels hide problems</h2>
+        <p>{name} runs residential and land searches out of Hickory, in the Catawba Valley. Being from here isn&rsquo;t a slogan &mdash; it means we&rsquo;ve pulled chains of title on these parcels before, and we know which subdivisions, which old family tracts, and which lake lots tend to surprise people.</p>
+        <p>Our underwriters work in-house. When something turns up on your file at seven in the evening, you&rsquo;re not waiting on a ticket queue in another time zone. You&rsquo;re talking to the person who can clear it.</p>
+        <p>Time-sensitive is the only kind of file we get, so we treat every one that way &mdash; a starter home or a hundred-acre tract, same attention either way.</p>
       </div>
     </div>
 
@@ -403,13 +402,13 @@ def page_services():
       </div>
       <div class="split__body d1" data-reveal>
         <span class="eyebrow">Closing Services</span>
-        <h2>The right closing, in person or remote</h2>
-        <p>At {name} we understand that finding the right attorney or notary for your closing can be a crucial step in the real estate process.</p>
-        <p>We&rsquo;ve established partnerships with a network of experienced professionals spanning various regions.</p>
+        <h2>The right closing table, wherever you are</h2>
+        <p>Finding an attorney or notary who can actually close on your timeline is half the battle &mdash; especially outside the metros.</p>
+        <p>We&rsquo;ve built a bench of closing professionals across both Carolinas, so we can match the deal to someone who&rsquo;s available and knows the county it sits in.</p>
         <ul class="checklist">
-          <li>{ok}Experienced closing attorneys &amp; notaries</li>
-          <li>{ok}A trusted network spanning multiple regions</li>
-          <li>{ok}Remote closings for flexibility &amp; convenience</li>
+          <li>{ok}Closing attorneys and notaries we&rsquo;ve worked with before</li>
+          <li>{ok}Coverage well past the Charlotte and Raleigh metros</li>
+          <li>{ok}Remote and hybrid closings when travel doesn&rsquo;t make sense</li>
         </ul>
       </div>
     </div>
@@ -425,54 +424,58 @@ def page_services():
         <span class="badge-pill">Commercial</span>
       </div>
       <div class="split__body d1" data-reveal>
-        <span class="eyebrow">Commercial Title Insurance</span>
-        <h2>Protection commensurate with value</h2>
-        <p>Unlike residential properties, commercial ones usually carry a hefty price tag and involve intricate negotiation procedures.</p>
-        <p>Safeguarding your investment to its fullest extent, commensurate with its value, is paramount.</p>
+        <span class="eyebrow">Commercial Title</span>
+        <h2>Bigger deals, more places to get hurt</h2>
+        <p>A commercial purchase carries a price tag and a negotiation that a residential deal doesn&rsquo;t. It carries more title risk too &mdash; layered easements, old leases, mechanics&rsquo; liens, entity questions about who can actually sign.</p>
+        <p>We insure to the level the investment warrants, and we tell you plainly what a policy does and doesn&rsquo;t reach.</p>
       </div>
     </div>
 
     <div class="accordion" style="margin-top:56px;">
       <div class="acc" data-reveal>
-        <button class="acc__q">What property type requires title insurance?<span class="ico">{plus}</span></button>
-        <div class="acc__a"><div class="acc__a-inner"><p>Although title insurance is common across all real estate transactions, its significance escalates in commercial real estate dealings due to the typically elevated purchase prices and intricate purchase agreements involved.</p></div></div>
+        <button class="acc__q">Which properties actually need title insurance?<span class="ico">{plus}</span></button>
+        <div class="acc__a"><div class="acc__a-inner"><p>Practically all of them. The stakes just climb with commercial deals &mdash; the prices are higher and the purchase agreements are more complicated, so a defect costs considerably more to fix after the fact.</p></div></div>
       </div>
       <div class="acc" data-reveal>
-        <button class="acc__q">Why do I need commercial title insurance?<span class="ico">{plus}</span></button>
-        <div class="acc__a"><div class="acc__a-inner"><p>Commercial title insurance safeguards the investor in case any complications arise concerning the property&rsquo;s title. These issues can stem from sources such as negligence, clerical errors, or even fraud.</p><p>In the absence of a title insurance policy, the property investor risks losing their investment.</p></div></div>
+        <button class="acc__q">Why bother with commercial title insurance?<span class="ico">{plus}</span></button>
+        <div class="acc__a"><div class="acc__a-inner"><p>It protects the investor when something surfaces on the title after closing. Those problems usually trace back to plain human error &mdash; a misfiled document, a clerical mistake, occasionally outright fraud.</p><p>Without a policy, the investor absorbs the loss. With one, the underwriter defends the claim.</p></div></div>
       </div>
       <div class="acc" data-reveal>
-        <button class="acc__q">Types of policies and who pays<span class="ico">{plus}</span></button>
-        <div class="acc__a"><div class="acc__a-inner"><p>There are two types of title insurance: the lender&rsquo;s policy and the owner&rsquo;s policy. If the buyer is utilizing a lender, they are responsible for purchasing both policies.</p><p>The owner&rsquo;s policy provides coverage for as long as the individual owns the property.</p></div></div>
+        <button class="acc__q">Lender&rsquo;s policy or owner&rsquo;s policy &mdash; and who pays?<span class="ico">{plus}</span></button>
+        <div class="acc__a"><div class="acc__a-inner"><p>There are two. The lender&rsquo;s policy protects the lender&rsquo;s stake and is required when there&rsquo;s financing. The owner&rsquo;s policy protects you. A buyer using a lender is typically responsible for both.</p><p>The owner&rsquo;s policy stays in force as long as you hold an interest in the property &mdash; no renewal, no expiration.</p></div></div>
       </div>
       <div class="acc" data-reveal>
-        <button class="acc__q">How do you acquire title insurance?<span class="ico">{plus}</span></button>
-        <div class="acc__a"><div class="acc__a-inner"><p>Given the complexity of commercial real estate, selecting the appropriate agency is paramount. With over two decades of experience, we are here to serve your needs.</p></div></div>
+        <button class="acc__q">How do you get a policy?<span class="ico">{plus}</span></button>
+        <div class="acc__a"><div class="acc__a-inner"><p>Send us the contract. We&rsquo;ll open the file, order the search, and walk you through whatever comes back &mdash; with two decades of Carolina commercial and residential work behind the read.</p></div></div>
       </div>
     </div>
   </div>
 </section>
-""".format(name=S["name"], city=S["city"], why=why_grid(), ok=I["ok"], plus=I["plus"])
-    + cta("Let&rsquo;s go&hellip;", "Start your transaction today",
-          "Whatever the property type, our team is ready to get your title moving &mdash; accurately and fast. Available nights and weekends.")
+""".format(name=S["name"], why=why_grid(), ok=I["ok"], plus=I["plus"])
+    + cta("Got a contract in hand?", "Let&rsquo;s open the file",
+          "Send it over and we&rsquo;ll get the search started today. Residential, land, or commercial &mdash; same attention, same turnaround.")
     + footer())
 
-COVERS = ["Property survey errors","Boundary disputes","Errors on the property deed",
- "Building code violations by a previous owner","Conflicting wills",
- "Claims by an ex-spouse who didn&rsquo;t sign off on the sale","Forged documents",
- "Liens from contractors, taxing entities or previous lenders","Encroachments",
- "Improperly recorded documents"]
-NOTCOVERS = ["Failing to pay the company that replaced your roof",
- "Failing to pay your property taxes",
- "Eminent domain &mdash; when a government seizes private property for a public purpose"]
+COVERS = ["Forged deeds and signatures",
+ "Liens from contractors, tax offices or previous lenders",
+ "Errors in the recorded deed",
+ "Survey mistakes and boundary disputes",
+ "Encroachments onto &mdash; or from &mdash; neighboring land",
+ "Claims from an ex-spouse who never signed off on the sale",
+ "Conflicting or contested wills",
+ "Code violations left behind by a previous owner",
+ "Documents that were recorded improperly"]
+NOTCOVERS = ["Not paying the contractor who redid your roof",
+ "Falling behind on your property taxes",
+ "Eminent domain, when a government takes private land for public use"]
 
 # ================================================================ HOMEOWNERS
 def page_homeowners():
     yes = "\n          ".join("<li>{t}{c}</li>".format(t=I["tick"],c=c) for c in COVERS)
     no  = "\n          ".join("<li>{x}{c}</li>".format(x=I["x"],c=c) for c in NOTCOVERS)
     return (
-    head("Homeowners — {n} | Buyers, Sellers &amp; Title Insurance Explained".format(n=S["name"]),
-         "For buyers and sellers: what title insurance is, what it covers and doesn't, how it works, who pays, and how much it costs — explained by {n}.".format(n=S["name"]),
+    head("Homeowners — {n} | Title Insurance, Explained Plainly".format(n=S["name"]),
+         "Plain answers for buyers and sellers: what title insurance is, what it covers, what it leaves out, what it costs, and who writes the check. From {n} in Hickory, NC.".format(n=S["name"]),
          "homeowners.html")
     + nav("homeowners.html")
     + """
@@ -480,8 +483,8 @@ def page_homeowners():
   <div class="wrap">
     <div class="section-head" data-reveal>
       <span class="eyebrow">For homeowners</span>
-      <h1>Buying or selling? <span class="text-grad">We&rsquo;ve got your title covered.</span></h1>
-      <p>Everything you need to know about title insurance &mdash; what it is, what it covers, how it works, and why it protects one of the biggest investments you&rsquo;ll ever make.</p>
+      <h1>Buying or selling? <span class="text-grad">Here&rsquo;s what happens to your title.</span></h1>
+      <p>Plain answers on what title insurance is, what it covers, what it costs, who pays for it, and why it matters on the biggest purchase most people ever make.</p>
     </div>
   </div>
 </section>
@@ -493,21 +496,21 @@ def page_homeowners():
       <div class="card" data-reveal>
         <div class="card__ico">{home}</div>
         <h3>Buyers</h3>
-        <p>When purchasing a home, it&rsquo;s essential to verify the seller&rsquo;s rightful ownership and ensure there are no unresolved issues that could impede the transfer of the title to you.</p>
-        <p><strong>Why is this important?</strong> Problems with the title can impose limitations on property usage and potentially lead to financial losses. This is where title insurance becomes invaluable, and {name} is here to assist you. We conduct thorough title searches to confirm that your ownership is clear of any encumbrances.</p>
-        <p>The cost of title insurance is paid only once, with no renewal premiums or expiration dates. This protection endures for as long as you, or your successors, hold an interest in the property &mdash; ensuring long-term security.</p>
+        <p>Before you buy, someone needs to confirm the seller actually owns what they&rsquo;re selling &mdash; free and clear, with nothing attached that would follow the property over to you.</p>
+        <p><strong>Why it matters:</strong> a defect on the title can limit what you&rsquo;re allowed to do with your own property, or cost real money to resolve. We work the public record thoroughly so you know exactly what you&rsquo;re taking on before you sign.</p>
+        <p>You pay for the policy once, at closing. No renewal, no expiration date. It covers you for as long as you &mdash; or your heirs &mdash; hold an interest in the property.</p>
       </div>
       <div class="card d1" data-reveal>
         <div class="card__ico">{sold}</div>
         <h3>Sellers</h3>
-        <p>Selling your house? <strong>{name} can help!</strong> We will assist you in finding an experienced Closing Attorney and satisfy any liens. We promise a smooth closing, great communication, and amazing service.</p>
-        <p>Whether you are listing your house for sale by owner or working with a real estate agent, we are here for you.</p>
+        <p>Selling? We&rsquo;ll line up a closing attorney, chase down and satisfy any outstanding liens, and keep the file moving so nothing stalls at the table.</p>
+        <p>Listing it yourself or working with an agent &mdash; either way, <strong>we work the same</strong>.</p>
         <ul class="checklist checklist--tight">
-          <li>{ok}Timely and accurate title commitments</li>
-          <li>{ok}Experienced and knowledgeable</li>
-          <li>{ok}Ability to resolve complex issues</li>
+          <li>{ok}Commitments issued on time and correct</li>
+          <li>{ok}People who have seen your situation before</li>
+          <li>{ok}Title problems untangled, not handed back to you</li>
         </ul>
-        <p style="margin-top:16px;">{name} will make the closing easy. Contact us to get your transaction started.</p>
+        <p style="margin-top:16px;">Send us the contract and we&rsquo;ll take it from there.</p>
       </div>
     </div>
   </div>
@@ -518,41 +521,41 @@ def page_homeowners():
   <div class="wrap">
     <div class="split">
       <div class="split__media" data-reveal>
-        <img src="assets/img/contract-review.jpg" alt="Reviewing a title insurance policy with a client" loading="lazy" width="1500" height="1125" />
+        <img src="assets/img/contract-review.jpg" alt="Going through a title insurance policy with a client" loading="lazy" width="1500" height="1125" />
         <span class="badge-pill">Title Insurance 101</span>
       </div>
       <div class="split__body d1" data-reveal>
         <span class="eyebrow">The basics</span>
-        <h2>What is title insurance and why do I need it?</h2>
-        <p>When you take out a mortgage, one part of your closing costs will be title insurance. The premium is a one-time charge, and the policy protects the lender. You also can purchase owner&rsquo;s title insurance to protect yourself, but it&rsquo;s not required.</p>
-        <p>Here&rsquo;s what you need to know about title insurance: what it covers, how much it costs, and whether you should buy it.</p>
+        <h2>So what is title insurance, exactly?</h2>
+        <p>When you finance a home, one line on your closing statement is title insurance. It&rsquo;s a single premium, paid once, and the required policy protects your lender.</p>
+        <p>You can also buy an owner&rsquo;s policy to protect yourself. That one is optional &mdash; and it&rsquo;s the one worth understanding before you decide.</p>
       </div>
     </div>
 
     <div style="max-width:860px;margin:48px auto 0;" data-reveal>
-      <p style="margin-bottom:16px;">Title insurance is a policy that covers third-party claims on a property that don&rsquo;t show up in the initial title search and arise after a real estate closing. A third party is someone other than the property&rsquo;s owner, such as a construction company that didn&rsquo;t get paid for its work on the home under a previous owner. The term &ldquo;title&rdquo; refers to someone&rsquo;s legal ownership of the property.</p>
-      <p style="margin-bottom:16px;">A title claim could arise at any time, even after you&rsquo;ve owned the property with no problems for many years. How could this happen? Someone else might have ownership rights that you don&rsquo;t know about when you make an offer to buy a property. Even the current owner might not be aware that someone else has a claim on the property. In the case of an overlooked heir, even the person who has those rights might not know they have them.</p>
-      <p>Before your home loan closes, your mortgage lender will order a title search from a title company. The title company searches public records related to your home to try to find any title defects that could affect the lender&rsquo;s or buyer&rsquo;s property rights, such as:</p>
+      <p style="margin-bottom:16px;">Title insurance covers third-party claims on a property &mdash; claims that didn&rsquo;t surface in the original search and only turn up after closing. A third party is anyone other than you: a roofing contractor who never got paid by the previous owner, a county tax office, an heir nobody knew about. &ldquo;Title&rdquo; just means legal ownership.</p>
+      <p style="margin-bottom:16px;">A claim can appear at any point, including years into quiet ownership. Someone may hold rights to the property that nobody flagged when you made your offer &mdash; and often the seller didn&rsquo;t know either. In the case of an overlooked heir, that person may not learn they have a claim until a lawyer tells them.</p>
+      <p>Before your loan closes, your lender orders a title search. A title company works the public record looking for anything that would affect the lender&rsquo;s or the buyer&rsquo;s rights:</p>
     </div>
 
     <div class="grid grid-3" style="margin-top:32px;">
       <div class="card" data-reveal>
         <h3 style="font-size:1.2rem;">Liens</h3>
-        <p>Liens can get placed on the property by a contractor, tax authority or lender who hasn&rsquo;t been paid. You don&rsquo;t want to get stuck paying a previous owner&rsquo;s unpaid bills.</p>
+        <p>A contractor, tax authority, or lender who wasn&rsquo;t paid can attach a lien to the property. You do not want to inherit the last owner&rsquo;s unpaid bills.</p>
       </div>
       <div class="card d1" data-reveal>
         <h3 style="font-size:1.2rem;">Easements</h3>
-        <p>Easements are someone else&rsquo;s right to use your property even though you are the owner &mdash; for example, utility lines in your backyard. An easement could limit your ability to use your property however you want.</p>
+        <p>Someone else&rsquo;s right to use land you own &mdash; a utility corridor across the back of the lot, a neighbor&rsquo;s driveway. It can quietly limit what you&rsquo;re allowed to build.</p>
       </div>
       <div class="card d2" data-reveal>
         <h3 style="font-size:1.2rem;">Encumbrances</h3>
-        <p>Encumbrances include liens (&ldquo;financial encumbrances&rdquo;) and easements, but also zoning laws, restrictive covenants imposed by homeowners associations, and leaseholder rights.</p>
+        <p>The broad category: liens and easements, plus zoning rules, HOA covenants, and any leasehold rights already running with the property.</p>
       </div>
     </div>
 
     <div style="max-width:860px;margin:32px auto 0;" data-reveal>
-      <p style="margin-bottom:16px;">A title company searches public records including deeds, mortgages, divorce decrees, court judgments, tax records and child support orders.</p>
-      <p>If the title search reveals any problems (also called &ldquo;clouds&rdquo;), the title company will try to resolve them. In some cases, your real estate agent will need to work with the seller&rsquo;s agent to get the seller to resolve the problem. In other cases, the problem may be significant enough to derail the sale.</p>
+      <p style="margin-bottom:16px;">The search pulls deeds, mortgages, court judgments, divorce decrees, tax records, and child support orders.</p>
+      <p>If it turns up a problem &mdash; the industry calls them &ldquo;clouds&rdquo; &mdash; we go to work clearing it. Sometimes that means your agent and the seller&rsquo;s agent getting the seller to resolve it. Occasionally a problem is serious enough to end the deal, and it is far better to learn that now than after you have signed.</p>
     </div>
   </div>
 </section>
@@ -562,8 +565,8 @@ def page_homeowners():
   <div class="wrap">
     <div class="section-head" data-reveal>
       <span class="eyebrow">Coverage</span>
-      <h2>What title insurance covers &mdash; and what it doesn&rsquo;t</h2>
-      <p>A title insurance policy covers underlying issues with a property&rsquo;s title that might have been missed before you bought the home. It comes in handy if the public record search failed to catch any liens or ownership disputes.</p>
+      <h2>What a policy reaches &mdash; and what it doesn&rsquo;t</h2>
+      <p>A policy covers underlying problems with a property&rsquo;s title that were missed before you bought it. It earns its keep on the day a search turns out to have overlooked a lien or an ownership dispute.</p>
     </div>
     <div class="cover-2">
       <div class="cover-card cover-card--yes" data-reveal>
@@ -574,11 +577,11 @@ def page_homeowners():
       </div>
       <div class="cover-card cover-card--no d1" data-reveal>
         <h3><span class="tag">{xw}</span>What it does not cover</h3>
-        <p style="margin-bottom:16px;">Title insurance doesn&rsquo;t protect homeowners against all possible infringements on their property rights. For example, it doesn&rsquo;t protect you against title problems caused by your own actions, such as:</p>
+        <p style="margin-bottom:16px;">A policy doesn&rsquo;t shield you from every possible limit on your property rights &mdash; and it won&rsquo;t cover problems you create yourself after closing:</p>
         <ul class="cover-list">
           {no}
         </ul>
-        <p style="margin-top:16px;">In short, it doesn&rsquo;t protect against issues newly created after you buy the property. It protects against issues that might have affected your decision to purchase the property had you known about them at the time.</p>
+        <p style="margin-top:16px;">The line is timing. Title insurance addresses issues that already existed and would have changed your decision to buy had you known about them. It doesn&rsquo;t cover what happens next.</p>
       </div>
     </div>
   </div>
@@ -589,8 +592,8 @@ def page_homeowners():
   <div class="wrap">
     <div class="callout" data-reveal>
       <div class="callout__t">
-        <h3>Standard vs. Expanded Coverage</h3>
-        <p>Homeowners can choose between standard and expanded coverage, which broadens protection against certain additional risks. Not sure which fits your purchase? Call us and we&rsquo;ll walk you through the difference in plain English.</p>
+        <h3>Standard or expanded coverage?</h3>
+        <p>Expanded coverage reaches additional risks a standard policy leaves out. Which one fits depends on the property and the deal. Call and we&rsquo;ll tell you straight whether it&rsquo;s worth it for your purchase.</p>
       </div>
       <a href="{tel}" class="btn btn--primary">Call {phone} {arrow}</a>
     </div>
@@ -602,44 +605,44 @@ def page_homeowners():
   <div class="wrap">
     <div class="split split--rev">
       <div class="split__media" data-reveal>
-        <img src="assets/img/cost.jpg" alt="Title insurance paperwork on a desk" loading="lazy" width="1500" height="1125" />
+        <img src="assets/img/cost.jpg" alt="Title paperwork on a desk" loading="lazy" width="1500" height="1125" />
         <span class="badge-pill">Cost &amp; Coverage</span>
       </div>
       <div class="split__body d1" data-reveal>
         <span class="eyebrow">How it works</span>
-        <h2>Who pays for title insurance, and how much does it cost?</h2>
-        <p>An owner&rsquo;s title insurance policy can cover the costs of paying off a previously undiscovered lien or defending against a lawsuit filed against you by someone claiming a right to the property. It can also provide a cash settlement to a new owner who unwittingly purchases a property with a forged deed. It protects your ability to sell the home one day if a problem turns up during a later title search.</p>
-        <p>You&rsquo;re probably less concerned about how a lender&rsquo;s policy works since it doesn&rsquo;t protect you &mdash; but you might still be curious, as you&rsquo;re being asked to pay for it. If you lose your home because the property was sold to you fraudulently, the lender will file a claim with its title insurance company to recoup the mortgage payments it was expecting from you. Under other circumstances the lender could foreclose to recoup its losses &mdash; but if someone else has a right to the home, foreclosure isn&rsquo;t an option.</p>
+        <h2>What it costs, and who writes the check</h2>
+        <p>An owner&rsquo;s policy can pay off a lien that surfaced after closing, fund your defense when someone sues claiming rights to your property, or settle with you in cash if the deed you bought on turns out to be forged. It also protects your ability to sell later, when the next buyer&rsquo;s search runs and finds the same problem.</p>
+        <p>The lender&rsquo;s policy doesn&rsquo;t protect you, though you&rsquo;re the one paying for it &mdash; so it&rsquo;s fair to ask what it&rsquo;s actually for. If you lose the home because it was sold to you fraudulently, the lender files a claim to recover the payments it was counting on. Normally a lender would foreclose to recoup its losses, but if someone else holds rights to the property, foreclosure isn&rsquo;t available to them either.</p>
       </div>
     </div>
 
     <div class="grid grid-2" style="margin-top:48px;align-items:start;">
       <div class="card" data-reveal>
-        <h3 style="font-size:1.25rem;">How much does it cost?</h3>
-        <p>Title insurance is a one-time, up-front fee &mdash; not an ongoing expense. An owner&rsquo;s policy is based on the home&rsquo;s purchase price, while a lender&rsquo;s policy is based on the loan amount. Both policies together usually cost about 0.5% to 1.0% of the home&rsquo;s purchase price, or $1,500 to $3,000 on a $300,000 home, according to ALTA.</p>
-        <p>In North and South Carolina, the price for title insurance is the same no matter which title insurance company you use. However, it&rsquo;s important to make sure you&rsquo;re using a reputable company with experienced underwriters. You can get an estimate of what title insurance costs in your area using the rate calculator.</p>
+        <h3 style="font-size:1.25rem;">What does it cost?</h3>
+        <p>One premium, paid once at closing &mdash; not a recurring cost. The owner&rsquo;s policy is priced off the purchase price, the lender&rsquo;s off the loan amount. Together they typically run 0.5% to 1.0% of the purchase price, or roughly $1,500 to $3,000 on a $300,000 home, according to ALTA.</p>
+        <p>In both North and South Carolina, title insurance is filed at the same rate no matter which agency you use. The price is the price. What differs is who&rsquo;s running the search, and whether their underwriters can clear a problem when one shows up. Run your numbers through the rate calculator.</p>
         <a href="{rate}" target="_blank" rel="noopener" class="btn btn--primary btn--sm" style="margin-top:8px;">Open Rate Calculator {arrow}</a>
       </div>
       <div class="card d1" data-reveal>
-        <h3 style="font-size:1.25rem;">Who pays for title insurance?</h3>
-        <p>The buyer pays for the lender&rsquo;s title insurance policy as part of their closing costs. Either the buyer or seller can pay for the owner&rsquo;s policy on behalf of the buyer. Local real estate custom often determines who pays.</p>
-        <p>Buying an owner&rsquo;s policy at the same time as a lender&rsquo;s policy can reduce the cost of the owner&rsquo;s policy through what&rsquo;s called a &ldquo;simultaneous issue charge.&rdquo;</p>
+        <h3 style="font-size:1.25rem;">Who pays for it?</h3>
+        <p>The buyer covers the lender&rsquo;s policy as part of closing costs. The owner&rsquo;s policy can be paid by either side &mdash; local custom usually decides, and it&rsquo;s negotiable.</p>
+        <p>Buying both at the same time lowers the cost of the owner&rsquo;s policy, through what the industry calls a simultaneous issue rate.</p>
       </div>
     </div>
   </div>
 </section>
-""".format(name=S["name"], home=I["home"], sold=I["sold"], ok=I["ok"],
+""".format(home=I["home"], sold=I["sold"], ok=I["ok"],
            tickw=I["tick"], xw=I["x"], yes=yes, no=no, rate=S["rate_calc"],
            arrow=I["arrow"], tel=TEL, phone=S["phone_plain"])
-    + cta("Let&rsquo;s go&hellip;", "Protect your investment",
-          "Buying or selling in the Carolinas? We&rsquo;ll make your closing easy &mdash; with clear title, great communication, and service available nights and weekends.")
+    + cta("Still have questions?", "Ask before you sign, not after",
+          "Call and ask. We&rsquo;d rather spend fifteen minutes on the phone now than have you find out what a policy does and doesn&rsquo;t cover once something has already gone wrong.")
     + footer())
 
 # ================================================================ CONTACT
 def page_contact():
     return (
-    head("Contact — {n} | Order Title in Hickory, NC".format(n=S["name"]),
-         "Contact {n} to order title or ask a question. Available nights and weekends across North and South Carolina. Call {p} or email {e}.".format(n=S["name"], p=S["phone_disp"], e=S["email"]),
+    head("Contact — {n} | Hickory, NC".format(n=S["name"]),
+         "Order title, request a quote, or ask a question. {n} is reachable early mornings, late evenings and weekends across North and South Carolina. Call {p} or email {e}.".format(n=S["name"], p=S["phone_disp"], e=S["email"]),
          "contact.html")
     + nav("contact.html")
     + """
@@ -647,8 +650,8 @@ def page_contact():
   <div class="wrap">
     <div class="section-head" data-reveal>
       <span class="eyebrow">Get in touch</span>
-      <h1>Let&rsquo;s get your <span class="text-grad">title started</span></h1>
-      <p>Order title, request a quote, or ask a question. We&rsquo;re accessible early mornings, late evenings, and weekends &mdash; serving every county in North and South Carolina.</p>
+      <h1>Send us the file, or just <span class="text-grad">ask a question</span></h1>
+      <p>Order title, get a quote, or ask something you&rsquo;d rather not guess at. Early mornings, late evenings, weekends &mdash; across all 100 North Carolina counties and all 46 in South Carolina.</p>
     </div>
   </div>
 </section>
@@ -672,11 +675,11 @@ def page_contact():
         </div>
         <div class="contact-card d3" data-reveal>
           <div class="ci">{clock}</div>
-          <div><h3>Hours</h3><p>Available nights &amp; weekends &middot; Serving all of NC &amp; SC</p></div>
+          <div><h3>When we&rsquo;re around</h3><p>Nights and weekends included &middot; 146 counties across NC &amp; SC</p></div>
         </div>
         <div class="contact-card" data-reveal>
           <div class="ci">{calc}</div>
-          <div><h3>Rate calculator</h3><a href="{rate}" target="_blank" rel="noopener">Estimate your title costs &rarr;</a></div>
+          <div><h3>Estimate the cost</h3><a href="{rate}" target="_blank" rel="noopener">Open the rate calculator &rarr;</a></div>
         </div>
       </div>
 
@@ -696,7 +699,7 @@ def page_contact():
           <input type="email" id="email" name="email" placeholder="you@email.com" autocomplete="email" required />
         </div>
         <div class="field">
-          <label for="topic">How can we help?</label>
+          <label for="topic">What do you need?</label>
           <select id="topic" name="topic">
             <option>Order title</option>
             <option>Request a quote</option>
@@ -711,7 +714,7 @@ def page_contact():
           <textarea id="message" name="message" placeholder="Property address, transaction details, timeline, or your question&hellip;"></textarea>
         </div>
         <button type="submit" class="btn btn--primary" style="width:100%;justify-content:center;">Send message {arrow}</button>
-        <p id="formNote" style="font-size:.85rem;color:var(--muted);margin-top:14px;text-align:center;">This opens your email app pre-filled to {email}. Prefer to call? <a href="{tel}" style="color:var(--brand-2);font-weight:650;">{phone_disp}</a></p>
+        <p id="formNote" style="font-size:.85rem;color:var(--muted);margin-top:14px;text-align:center;">This opens your email app pre-filled to {email}. Rather just call? <a href="{tel}" style="color:var(--brand-2);font-weight:650;">{phone_disp}</a></p>
       </form>
 
     </div>
@@ -720,8 +723,8 @@ def page_contact():
 """.format(phone=I["phone"], tel=TEL, phone_disp=S["phone_disp"], mail=I["mail"],
            email=S["email"], pin=I["pin"], locale=S["locale_line"], clock=I["clock"],
            calc=I["calc"], rate=S["rate_calc"], arrow=I["arrow"])
-    + cta("Available nights &amp; weekends", "Ready when you are",
-          "Send your request and our team will get started right away &mdash; accurate title, clear communication, and service on your schedule.")
+    + cta("No file too small", "We&rsquo;re ready when you are",
+          "Send it over and we&rsquo;ll get moving &mdash; accurate title, straight answers, and a schedule that bends to yours instead of the other way around.")
     + footer())
 
 # ================================================================ WRITE
@@ -738,7 +741,6 @@ if __name__ == "__main__":
         with open(fn, "w", encoding="utf-8") as f:
             f.write(html)
         print("wrote %-16s %6d bytes" % (fn, len(html)))
-    # sitemap + robots
     with open("sitemap.xml","w") as f:
         f.write('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n')
         for fn in ["", "services.html", "homeowners.html", "contact.html"]:
