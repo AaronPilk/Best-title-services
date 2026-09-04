@@ -683,46 +683,33 @@ def page_contact():
         </div>
       </div>
 
-      <form class="form-card" id="contactForm" data-reveal novalidate>
-        <div class="form-row">
-          <div class="field">
-            <label for="name">Name</label>
-            <input type="text" id="name" name="name" placeholder="Your full name" autocomplete="name" required />
-          </div>
-          <div class="field">
-            <label for="phone">Phone</label>
-            <input type="tel" id="phone" name="phone" placeholder="(704) 000-0000" autocomplete="tel" />
-          </div>
+      <div class="order-panel" data-reveal>
+        <span class="order-panel__label">Ready to order?</span>
+        <h2>Send it to us and we&rsquo;ll open the file</h2>
+        <p>Email the details and we&rsquo;ll get the search started the same day. Send what you have &mdash; we&rsquo;ll chase down the rest.</p>
+
+        <ul class="order-panel__list">
+          <li>{ok}Property address and county</li>
+          <li>{ok}Buyer and seller names</li>
+          <li>{ok}Purchase price and target closing date</li>
+          <li>{ok}Lender contact, if there is one</li>
+          <li>{ok}A copy of the contract, if you have it</li>
+        </ul>
+
+        <div class="order-panel__actions">
+          <a href="{mailto}" class="btn btn--primary">Email {email} {arrow}</a>
+          <a href="{tel}" class="btn btn--ghost">{phone_ico} Call {phone_disp}</a>
         </div>
-        <div class="field">
-          <label for="email">Email</label>
-          <input type="email" id="email" name="email" placeholder="you@email.com" autocomplete="email" required />
-        </div>
-        <div class="field">
-          <label for="topic">What do you need?</label>
-          <select id="topic" name="topic">
-            <option>Order title</option>
-            <option>Request a quote</option>
-            <option>Residential / land title</option>
-            <option>Commercial title</option>
-            <option>Closing services</option>
-            <option>General question</option>
-          </select>
-        </div>
-        <div class="field">
-          <label for="message">Details</label>
-          <textarea id="message" name="message" placeholder="Property address, transaction details, timeline, or your question&hellip;"></textarea>
-        </div>
-        <button type="submit" class="btn btn--primary" style="width:100%;justify-content:center;">Send message {arrow}</button>
-        <p id="formNote" style="font-size:.85rem;color:var(--muted);margin-top:14px;text-align:center;">This opens your email app pre-filled to {email}. Rather just call? <a href="{tel}" style="color:var(--brand-2);font-weight:650;">{phone_disp}</a></p>
-      </form>
+        <p class="order-panel__note">Missing something on the list? Send it anyway &mdash; we&rsquo;ll tell you what else we need.</p>
+      </div>
 
     </div>
   </div>
 </section>
-""".format(phone=I["phone"], tel=TEL, phone_disp=S["phone_disp"], mail=I["mail"],
-           email=S["email"], pin=I["pin"], locale=S["locale_line"], clock=I["clock"],
-           calc=I["calc"], rate=S["rate_calc"], arrow=I["arrow"])
+""".format(phone=I["phone"], phone_ico=I["phone"], tel=TEL, phone_disp=S["phone_disp"],
+           mail=I["mail"], email=S["email"], pin=I["pin"], locale=S["locale_line"],
+           clock=I["clock"], calc=I["calc"], rate=S["rate_calc"], arrow=I["arrow"],
+           ok=I["ok"], mailto=MAILTO)
     + cta("No file too small", "We&rsquo;re ready when you are",
           "Send it over and we&rsquo;ll get moving &mdash; accurate title, straight answers, and a schedule that bends to yours instead of the other way around.")
     + footer())

@@ -96,30 +96,6 @@
     }, { passive: true });
   }
 
-  /* --- Contact form -> mailto --- */
-  var cf = document.getElementById('contactForm');
-  if (cf) {
-    cf.addEventListener('submit', function (e) {
-      e.preventDefault();
-      var g = function (id) { var el = document.getElementById(id); return el ? el.value.trim() : ''; };
-      var name = g('name'), email = g('email'), phone = g('phone'), topic = g('topic'), msg = g('message');
-      var note = document.getElementById('formNote');
-      if (!name || !email) {
-        if (note) { note.textContent = 'Please add your name and email so we can reply.'; note.style.color = '#f96223'; }
-        return;
-      }
-      var subject = 'Best Title Services — ' + (topic || 'Inquiry') + ' from ' + name;
-      var body =
-        'Name: ' + name + '\n' +
-        'Email: ' + email + '\n' +
-        'Phone: ' + phone + '\n' +
-        'Topic: ' + topic + '\n\n' +
-        'Details:\n' + msg + '\n';
-      window.location.href = 'mailto:orders@besttitlenc.com?subject=' +
-        encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
-    });
-  }
-
   /* --- Current year --- */
   document.querySelectorAll('#year').forEach(function (el) {
     el.textContent = new Date().getFullYear();
