@@ -6,8 +6,8 @@ Everything that changes between sister sites lives in SITE below.
 To spin up the next agency: copy this folder, swap SITE + assets/img/logo-*.png,
 run `python3 build.py`, commit, push. Cloudflare Pages serves the HTML directly.
 
-Positioning note: this company serves North AND South Carolina broadly. Do not
-reintroduce city-level positioning into copy, titles, meta or alt text.
+Positioning note: this company serves NORTH CAROLINA ONLY. Do not reintroduce
+city-level positioning, and do not add South Carolina anywhere.
 """
 
 SITE = {
@@ -19,10 +19,10 @@ SITE = {
     "phone_disp":  "(704) 467-3031",
     "phone_plain": "704-467-3031",
     "phone_link":  "7044673031",
-    "region":      "North &amp; South Carolina",
-    "region_abbr": "NC &amp; SC",
-    "serve_line":  "Serving North &amp; South Carolina",
-    "counties":    "all 100 North Carolina counties and all 46 South Carolina counties",
+    "region":      "North Carolina",
+    "region_abbr": "North Carolina",
+    "serve_line":  "Serving all of North Carolina",
+    "counties":    "all 100 North Carolina counties",
     "rate_calc":   "https://rates.wfgnationaltitle.com/",
     "years":       "20+",
 }
@@ -181,7 +181,7 @@ WHY = [("users", "Experienced Team",        "Two decades in title"),
        ("clock", "Fast Turnaround",         "Commitments without the wait"),
        ("chat",  "Responsive Communication", "You get a real answer"),
        ("doc",   "Thorough Title Review",   "Every detail checked"),
-       ("map",   "NC &amp; SC Coverage",    "146 counties, both states"),
+       ("map",   "Statewide Coverage",     "All 100 NC counties"),
        ("shield","WFG Underwriting",        "National financial strength")]
 
 def why_grid():
@@ -192,7 +192,7 @@ def why_grid():
         for n,(k,t,s) in enumerate(WHY))
 
 SERVICE_CARDS = [
-  ("home",  "Residential &amp; Land Title", "Thorough title work for homes, land, and property purchases across NC &amp; SC."),
+  ("home",  "Residential &amp; Land Title", "Thorough title work for homes, land, and property purchases throughout North Carolina."),
   ("doc",   "Closing Coordination",         "Practical support to help connect the right parties and keep the file moving."),
   ("bldg",  "Commercial Title",             "Experienced title review and insurance for larger, more complex transactions."),
   ("trend", "Investors",                    "Dependable title support for single-property purchases, repeat transactions, and growing portfolios."),
@@ -208,8 +208,8 @@ def service_cards():
 # ================================================================ HOME
 def page_index():
     return (
-    head("{n} — Title Insurance &amp; Title Services in NC &amp; SC".format(n=S["name"]),
-         "Best Title Services provides dependable title insurance, title searches, commitments, and closing coordination for buyers, sellers, lenders, real estate professionals, and investors across North and South Carolina.",
+    head("{n} — Title Insurance &amp; Title Services in North Carolina".format(n=S["name"]),
+         "Best Title Services provides dependable title insurance, title searches, commitments, and closing coordination for buyers, sellers, lenders, real estate professionals, and investors across North Carolina.",
          "index.html")
     + nav("index.html")
     + """
@@ -220,7 +220,7 @@ def page_index():
   </div>
   <div class="wrap">
     <div class="hero__content" data-reveal>
-      <span class="hero__badge">Title Services &middot; North &amp; South Carolina</span>
+      <span class="hero__badge">Title Services &middot; North Carolina</span>
       <h1>Title service <span class="text-grad">at its best.</span></h1>
       <p class="hero__sub">{name} provides dependable title insurance and title services for buyers, sellers, real estate professionals, and investors across {region}. Built on responsive service, fast turnaround, and experienced title work, we help keep transactions moving with confidence.</p>
       <div class="hero__actions">
@@ -229,7 +229,7 @@ def page_index():
       </div>
       <div class="hero-badges">
         <span>{shield} WFG National Title underwriting</span>
-        <span>{map} Serving NC &amp; SC</span>
+        <span>{map} Serving all of North Carolina</span>
       </div>
     </div>
   </div>
@@ -261,7 +261,7 @@ def page_index():
   <div class="wrap">
     <div class="stats">
       <div class="stat-card" data-reveal><b class="text-grad-b">{years}</b><span>Years of title experience</span></div>
-      <div class="stat-card d1" data-reveal><b class="text-grad-b">146</b><span>Counties across NC &amp; SC</span></div>
+      <div class="stat-card d1" data-reveal><b class="text-grad-b">100</b><span>North Carolina counties covered</span></div>
       <div class="stat-card d2" data-reveal><b class="text-grad-b">Fast</b><span>Turnaround on every file</span></div>
       <div class="stat-card d3" data-reveal><b class="text-grad-b">WFG</b><span>National Title underwriting</span></div>
     </div>
@@ -301,7 +301,7 @@ def page_index():
   <div class="imgband__bg"><img src="assets/img/land.jpg" alt="Carolina foothills at golden hour" loading="lazy" width="1500" height="1125" /></div>
   <div class="wrap">
     <div style="max-width:620px;" data-reveal>
-      <span class="eyebrow">Local knowledge. Broad Carolinas coverage.</span>
+      <span class="eyebrow">Local knowledge. Statewide coverage.</span>
       <h2>Experienced title work wherever the property sits</h2>
       <p style="margin-top:20px;">Every property has a history. From mountain and lake properties to residential neighborhoods, land, and commercial transactions, our team understands how to review the details, identify potential issues, and help keep files moving across {region}.</p>
       <div style="margin-top:32px;">
@@ -347,7 +347,7 @@ def page_index():
 def page_services():
     return (
     head("Services — {n} | Residential, Land, Closing, Commercial &amp; Investor Title".format(n=S["name"]),
-         "Residential and land title, closing coordination, investor support, and commercial title work across all 100 North Carolina counties and all 46 South Carolina counties.",
+         "Residential and land title, closing coordination, investor support, and commercial title work across all 100 North Carolina counties.",
          "services.html")
     + nav("services.html")
     + """
@@ -397,7 +397,7 @@ def page_services():
         <p>We help coordinate the people and details needed to move the transaction forward, whether the closing is in person, remote, or somewhere in between.</p>
         <ul class="checklist">
           <li>{ok}Experienced closing attorneys and notaries</li>
-          <li>{ok}Coordination across both Carolinas</li>
+          <li>{ok}Coordination in every North Carolina county</li>
           <li>{ok}Remote and hybrid closings where they make sense</li>
         </ul>
       </div>
@@ -518,7 +518,7 @@ FAQ = [
  ("What does it cost, and who pays?",
   ["<p>One premium, paid once at closing. The owner&rsquo;s policy is priced off the purchase price, the lender&rsquo;s off the loan amount. Together they typically run 0.5% to 1.0% of the purchase price, or roughly $1,500 to $3,000 on a $300,000 home, according to ALTA.</p>",
    "<p>The buyer covers the lender&rsquo;s policy as part of closing costs. The owner&rsquo;s policy can be paid by either side &mdash; local custom usually decides, and it is negotiable. Buying both at once lowers the cost of the owner&rsquo;s policy through a simultaneous issue rate.</p>",
-   "<p>In both North and South Carolina, title insurance is filed at the same rate no matter which agency you use. What differs is who is running the search, and whether their underwriters can clear a problem when one appears.</p>"]),
+   "<p>In North Carolina, title insurance is filed at the same rate no matter which agency you use. What differs is who is running the search, and whether their underwriters can clear a problem when one appears.</p>"]),
  ("Why is the lender&rsquo;s policy on my closing statement?",
   ["<p>It protects the lender, not you, though you are the one paying for it. If you lose the home because it was sold to you fraudulently, the lender files a claim to recover the payments it was counting on.</p>",
    "<p>An owner&rsquo;s policy is what protects your equity, funds your defense if someone sues claiming rights to the property, and preserves your ability to sell later when the next buyer&rsquo;s search runs.</p>"]),
@@ -535,7 +535,7 @@ def page_homeowners():
       for q,a in FAQ)
     return (
     head("Homeowners — {n} | Clear Answers on Title Insurance".format(n=S["name"]),
-         "Clear answers for homeowners: what title insurance is, what it covers, what it leaves out, what it costs, and who pays. Title services across North and South Carolina.",
+         "Clear answers for homeowners: what title insurance is, what it covers, what it leaves out, what it costs, and who pays. Title services across North Carolina.",
          "homeowners.html")
     + nav("homeowners.html")
     + """
@@ -639,8 +639,8 @@ def page_homeowners():
 # ================================================================ CONTACT
 def page_contact():
     return (
-    head("Contact — {n} | Order Title in NC &amp; SC".format(n=S["name"]),
-         "Order title, request a quote, or ask a question. Responsive title service across all 100 North Carolina counties and all 46 South Carolina counties. Call {p} or email {e}.".format(p=S["phone_disp"], e=S["email"]),
+    head("Contact — {n} | Order Title in North Carolina".format(n=S["name"]),
+         "Order title, request a quote, or ask a question. Responsive title service across all 100 North Carolina counties. Call {p} or email {e}.".format(p=S["phone_disp"], e=S["email"]),
          "contact.html")
     + nav("contact.html")
     + """
